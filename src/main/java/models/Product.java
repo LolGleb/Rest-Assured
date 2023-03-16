@@ -7,6 +7,7 @@ public final class Product {
   private  String description;
   private double price;
   private int category_id;
+  private String category_name;
 
   public Product() {}
 
@@ -18,13 +19,14 @@ public final class Product {
     this.category_id = category_id;
   }
 
-  //Used for PUT requests
-  public Product(int id, String name, String description, double price, int category_id) {
+  //Used for GET requests
+  public Product(int id, String name, String description, double price, int category_id, String category_name) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.price = price;
     this.category_id = category_id;
+    this.category_name = category_name;
   }
 
   public int getId() {
@@ -63,7 +65,9 @@ public final class Product {
     this.price = price;
   }
 
-  public void setCategory_id(int category_id) {
-    this.category_id = category_id;
-  }
+  public void setCategory_id(int category_id) { this.category_id = category_id; }
+
+  public String getCategory_name() { return category_name; }
+
+  public void setCategory_name(String category_name) { this.category_name = category_name; }
 }
